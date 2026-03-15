@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eyasin Arafath | BI Analyst Portfolio</title>
+    <meta name="description" content="Portfolio of Eyasin Arafath, BI Analyst and Economics Student bridging the gap between Sales and Marketing.">
+    <!-- Facebook / Open Graph Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://your-portfolio-link.com/"> 
+    <meta property="og:title" content="Eyasin Arafath | BI Analyst Portfolio">
+    <meta property="og:description" content="I bridge the gap between Sales and Marketing. I use data analysis to fix operational friction so you stop losing leads.">
+    <meta property="og:image" content="og-banner.png">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            500: '#0ea5e9', // Sky blue
+                            600: '#0284c7',
+                            800: '#075985',
+                            900: '#0c4a6e',
+                        }
+                    },
+                    animation: {
+                        'marquee': 'marquee 17s linear infinite',
+                    },
+                    keyframes: {
+                        marquee: {
+                            '0%': { transform: 'translateX(0%)' },
+                            '100%': { transform: 'translateX(-50%)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        /* Custom Styles for interactions */
+        .project-card .details-panel {
+            /* Basic setup handled by Tailwind */
+        }
+        
+        /* Hide scrollbar for Chrome, Safari and Opera */
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+        /* Hide scrollbar for IE, Edge and Firefox */
+        .scrollbar-hide {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
+
+        /* Smooth Marquee Container */
+        .marquee-content {
+            display: flex;
+            width: max-content;
+        }
+
+       .marquee-item {
+            cursor: pointer;
+            transition: all 0.4s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Go to Top Button Transition */
+        #go-to-top {
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* Logo Grayscale to Color Transition for Credentials Grid */
+        .brand-logo {
+            filter: grayscale(100%);
+            transition: all 0.5s ease;
+            opacity: 0.6;
+        }
+        .group:hover .brand-logo {
+            filter: grayscale(0%);
+            opacity: 1;
+        }
+        @keyframes pulse-subtle {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+        .verify-pulse { animation: pulse-subtle 3s infinite ease-in-out; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-brand-200 selection:text-brand-900">
+    
+   <!-- Top Development Banner -->
+    <div class="w-full z-[60] bg-slate-900 text-white py-3 px-4 overflow-hidden border-b border-slate-800">
+        <div class="max-w-7xl mx-auto flex items-center justify-center gap-4 text-center">
+            <span class="flex h-2 w-2 relative">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-400 opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-2 w-2 bg-brand-500"></span>
+            </span>
+            <p class="text-[10px] md:text-xs font-bold uppercase tracking-[0.2em]">
+                Work in Progress: <span class="text-slate-400 font-light ml-1">This portfolio is currently under active development.</span>
+            </p>
+            <span class="hidden md:inline-block px-2 py-0.5 border border-slate-700 text-[9px] text-slate-500 uppercase tracking-widest">v1.0-Beta</span>
+        </div>
+    </div>
+
+    <!-- REFINED NAVIGATION: Now using 'sticky' to prevent banner overlap -->
+    <nav class="sticky top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-slate-100 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo / Profile Picture -->
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="#home" class="block relative group">
+                        <!-- Profile Image -->
+                        <img src="profileicon.png" 
+                             alt="Eyasin Arafath" 
+                             class="h-10 w-10 md:h-12 md:w-12 rounded-full object-cover border border-slate-200 shadow-sm group-hover:border-brand-500 transition-all duration-300"
+                             onerror="this.src='https://ui-avatars.com/api/?name=Eyasin+Arafath&background=0f172a&color=fff&size=128'">
+                    </a>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-10">
+                    <a href="#home" class="text-sm uppercase tracking-widest text-slate-500 hover:text-brand-600 font-medium transition-colors">Home</a>
+                    <a href="#about" class="text-sm uppercase tracking-widest text-slate-500 hover:text-brand-600 font-medium transition-colors">About</a>
+                    <a href="#work" class="text-sm uppercase tracking-widest text-slate-500 hover:text-brand-600 font-medium transition-colors">Work</a>
+                    <a href="#projects" class="text-sm uppercase tracking-widest text-slate-500 hover:text-brand-600 font-medium transition-colors">Projects</a>
+                    <a href="articles.html" class="text-sm uppercase tracking-widest text-slate-500 hover:text-brand-600 font-medium transition-colors">Articles</a>
+                    <a href="#contact" class="text-sm uppercase tracking-widest text-slate-500 hover:text-brand-600 font-medium transition-colors">Contact</a>
+                </div>
+
+                <!-- Mobile Menu Button (UPGRADED) -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="relative w-10 h-10 text-slate-600 hover:text-slate-900 focus:outline-none cursor-pointer z-50" aria-label="Toggle Menu">
+                        <div class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-5">
+                            <span class="menu-line-1 block absolute h-[2px] w-5 bg-current transform transition duration-300 ease-in-out -translate-y-1.5"></span>
+                            <span class="menu-line-2 block absolute h-[2px] w-5 bg-current transform transition duration-300 ease-in-out"></span>
+                            <span class="menu-line-3 block absolute h-[2px] w-5 bg-current transform transition duration-300 ease-in-out translate-y-1.5"></span>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown (UPGRADED) -->
+         <div id="mobile-menu" class="absolute top-20 left-0 w-full bg-white/95 backdrop-blur-xl border-t border-slate-100 shadow-2xl transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] opacity-0 -translate-y-4 pointer-events-none md:hidden z-40">
+            <div class="px-6 py-8 flex flex-col space-y-6 text-center">
+                <a href="#home" class="mobile-link text-xs font-bold uppercase tracking-[0.2em] text-slate-900 hover:text-brand-500 transition-colors">Home</a>
+                <a href="#about" class="mobile-link text-xs font-bold uppercase tracking-[0.2em] text-slate-900 hover:text-brand-500 transition-colors">About Me</a>
+                <a href="#work" class="mobile-link text-xs font-bold uppercase tracking-[0.2em] text-slate-900 hover:text-brand-500 transition-colors">Work</a>
+                <a href="#projects" class="mobile-link text-xs font-bold uppercase tracking-[0.2em] text-slate-900 hover:text-brand-500 transition-colors">Projects</a>
+                <a href="articles.html" class="mobile-link text-xs font-bold uppercase tracking-[0.2em] text-slate-900 hover:text-brand-500 transition-colors">Articles</a>
+                <a href="#contact" class="mobile-link text-xs font-bold uppercase tracking-[0.2em] text-slate-900 hover:text-brand-500 transition-colors">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative min-h-screen flex items-center bg-slate-50 overflow-hidden pt-3 pb-16 lg:pb-0">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+        <div class="grid lg:grid-cols-2 gap-8 lg:gap-8 items-center">
+            
+            <div class="order-2 lg:order-1 flex flex-col justify-center text-left z-10 mt-4 lg:mt-0">
+                    <div class="mb-6 opacity-0 animate-[fadeIn_1s_ease-out_0.2s_forwards]">
+                        <p class="font-sans text-xs tracking-[0.2em] text-slate-400 uppercase font-bold flex items-center">
+                            <span class="w-8 h-[1px] bg-slate-300 mr-4"></span> Portfolio
+                        </p>
+                    </div>
+                    
+                    <h1 class="font-serif text-5xl sm:text-7xl lg:text-[5.5rem] font-bold text-slate-900 leading-[1.05] tracking-tight mb-8 opacity-0 animate-[fadeIn_1s_ease-out_0.4s_forwards]">
+                        Eyasin<br />Arafath.
+                    </h1>
+                    
+                    <p class="text-lg md:text-xl text-slate-500 font-light max-w-lg leading-relaxed mb-12 opacity-0 animate-[fadeIn_1s_ease-out_0.6s_forwards]">
+                        A <span class="font-medium text-slate-900">Business Intelligence Analyst</span> translating complex data into elegant, actionable strategies.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row items-start sm:items-center gap-8 opacity-0 animate-[fadeIn_1s_ease-out_0.8s_forwards]">
+                        <a href="#projects" class="px-8 py-4 bg-slate-900 text-white text-xs font-bold uppercase tracking-widest hover:bg-brand-600 transition-colors duration-300 shadow-lg shadow-slate-900/20">
+                            View Selected Work
+                        </a>
+                        <a href="CV_Eyasin_Arafath.pdf" download class="group flex items-center gap-3 text-xs font-bold uppercase tracking-widest text-slate-900 hover:text-brand-600 transition-colors">
+                            <span class="border-b-2 border-slate-900 group-hover:border-brand-600 pb-1 transition-colors">Get my CV</span>
+                            <i class="fas fa-download opacity-70 group-hover:opacity-100 group-hover:-translate-y-0.5 transition-all text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Image / Visual Element -->
+                <div class="order-1 lg:order-2 relative opacity-0 animate-[fadeIn_1s_ease-out_0.5s_forwards] flex justify-center lg:justify-end">
+                    <div class="relative z-10 w-full max-w-md lg:max-w-lg aspect-[4/5] overflow-hidden bg-slate-200">
+                        <img src="Untitled design (3).png" 
+                             alt="Eyasin Arafath Portrait" 
+                             class="w-full h-full object-cover filter grayscale hover:grayscale-0 active:grayscale-0 focus:grayscale-0 transition-all duration-700 ease-out cursor-pointer"
+                             tabindex="0">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- MINIMAL About Me Section -->
+    <section id="about" class="py-24 lg:py-36 bg-white border-t border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-start">
+                
+                <!-- Headline Column -->
+                <div class="lg:col-span-4">
+                    <h2 class="text-4xl md:text-5xl font-serif font-bold text-slate-900 leading-tight">
+                        About Me.
+                    </h2>
+                    <div class="w-12 h-[1px] bg-brand-500 mt-8"></div>
+                </div>
+
+                <!-- Content Column -->
+                <div class="lg:col-span-8">
+                    <!-- 2-3 Line Summary -->
+                    <p class="text-2xl md:text-3xl font-serif text-slate-800 leading-snug mb-12">
+                        A Business Intelligence Analyst and Economics student dedicated to bridging the gap between <span class="italic text-slate-400">raw data</span> and <span class="text-brand-500">strategic growth</span>. I specialize in uncovering the "why" behind complex datasets to dictate actionable outcomes.
+                    </p>
+
+                    <!-- Education info -->
+                    <div class="pt-12 border-t border-slate-100">
+                        <h3 class="text-[10px] font-bold tracking-[0.3em] text-slate-400 uppercase mb-6">Education</h3>
+                        <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+                            <div>
+                                <h4 class="text-xl font-serif font-bold text-slate-900">BSS (Hon’s) in Economics</h4>
+                                <p class="text-slate-500 font-light mt-1">Bangladesh University of Professionals (BUP)</p>
+                            </div>
+                            <div class="text-left md:text-right">
+                                <span class="inline-block px-3 py-1 bg-slate-900 text-white text-[10px] font-bold uppercase tracking-widest">
+                                    8th Semester // Class of 2026
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW Credentials Section (Replaces Marquee) -->
+    <section id="credentials" class="py-24 bg-slate-50 border-y border-slate-200 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-16">
+                <div class="max-w-xl">
+                    <h2 class="text-[10px] font-bold tracking-[0.3em] text-slate-400 uppercase mb-4">Validation</h2>
+                    <h3 class="text-4xl md:text-5xl font-serif font-bold text-slate-900 leading-tight">Professional Credentials.</h3>
+                </div>
+                <div class="mt-6 md:mt-0 hidden md:block">
+                    <p class="text-slate-500 text-sm font-light max-w-xs leading-relaxed">Validated expertise from global industry leaders.</p>
+                </div>
+            </div>
+
+            <div id="cert-container" class="flex md:grid overflow-x-auto md:overflow-x-visible snap-x snap-mandatory md:grid-cols-2 lg:grid-cols-3 gap-6 pb-6 -mx-4 px-4 md:mx-0 md:px-0 scrollbar-hide items-stretch">
+                <!-- Cert 1: Binance -->
+                <div onclick="openCertModal('binance')" class="flex-shrink-0 w-[85vw] sm:w-[280px] md:w-auto snap-center group relative bg-white border border-slate-200 p-8 cursor-pointer transition-all duration-500 hover:border-slate-900 hover:shadow-xl flex flex-col">
+                    <div class="flex justify-between items-start mb-10">
+                        <div class="h-10 w-auto flex items-center">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/5/57/Binance_Logo.svg" alt="Binance" class="brand-logo h-8 w-auto">
+                        </div>
+                        <span class="flex items-center gap-1 text-[8px] font-bold text-emerald-500 uppercase tracking-widest bg-emerald-50 px-2 py-1 verify-pulse"><i class="fas fa-check-circle"></i> Verified</span>
+                    </div>
+                    <h4 class="text-lg font-serif font-bold text-slate-900 mb-2 group-hover:text-brand-600 transition-colors">Blockchain Fundamentals</h4>
+                    <p class="text-[10px] text-slate-400 uppercase tracking-[0.2em]">Binance Certified</p>
+                </div>
+
+                <!-- Cert 2: Google -->
+                <div onclick="openCertModal('google')" class="flex-shrink-0 w-[85vw] sm:w-[280px] md:w-auto snap-center group relative bg-white border border-slate-200 p-8 cursor-pointer transition-all duration-500 hover:border-slate-900 hover:shadow-xl flex flex-col">
+                    <div class="flex justify-between items-start mb-10">
+                        <div class="h-10 w-auto flex items-center">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="Google" class="brand-logo h-8 w-auto">
+                        </div>
+                        <span class="flex items-center gap-1 text-[8px] font-bold text-amber-500 uppercase tracking-widest bg-amber-50 px-2 py-1 verify-pulse"><i class="fas fa-clock"></i> Enrolled</span>
+                    </div>
+                    <h4 class="text-lg font-serif font-bold text-slate-900 mb-2 group-hover:text-brand-600 transition-colors">Google Data Analytics</h4>
+                    <p class="text-[10px] text-slate-400 uppercase tracking-[0.2em]">Advanced Certification</p>
+                </div>
+
+                <!-- Cert 3: Tableau -->
+                <div onclick="openCertModal('tableau')" class="flex-shrink-0 w-[85vw] sm:w-[280px] md:w-auto snap-center group relative bg-white border border-slate-200 p-8 cursor-pointer transition-all duration-500 hover:border-slate-900 hover:shadow-xl flex flex-col">
+                    <div class="flex justify-between items-start mb-10">
+                        <div class="h-10 w-auto flex items-center">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/4/4b/Tableau_Logo.png" alt="Tableau" class="brand-logo h-7 w-auto">
+                        </div>
+                        <span class="flex items-center gap-1 text-[8px] font-bold text-blue-500 uppercase tracking-widest bg-blue-50 px-2 py-1 verify-pulse"><i class="fas fa-lightbulb"></i> Considering</span>
+                    </div>
+                    <h4 class="text-lg font-serif font-bold text-slate-900 mb-2 group-hover:text-brand-600 transition-colors">Tableau Specialist</h4>
+                    <p class="text-[10px] text-slate-400 uppercase tracking-[0.2em]">Professional Validation</p>
+                </div>
+
+                <!-- Cert 4: IBM -->
+                <div onclick="openCertModal('ibm')" class="flex-shrink-0 w-[85vw] sm:w-[280px] md:w-auto snap-center group relative bg-white border border-slate-200 p-8 cursor-pointer transition-all duration-500 hover:border-slate-900 hover:shadow-xl flex flex-col">
+                    <div class="flex justify-between items-start mb-10">
+                        <div class="h-10 w-auto flex items-center">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg" alt="IBM" class="brand-logo h-6 w-auto">
+                        </div>
+                        <span class="flex items-center gap-1 text-[8px] font-bold text-emerald-500 uppercase tracking-widest bg-emerald-50 px-2 py-1 verify-pulse"><i class="fas fa-check-circle"></i> Verified</span>
+                    </div>
+                    <h4 class="text-lg font-serif font-bold text-slate-900 mb-2 group-hover:text-brand-600 transition-colors">Statistics with Python</h4>
+                    <p class="text-[10px] text-slate-400 uppercase tracking-[0.2em]">IBM Specialization</p>
+                </div>
+
+                <!-- Cert 5: Cisco -->
+                <div onclick="openCertModal('cisco')" class="flex-shrink-0 w-[85vw] sm:w-[280px] md:w-auto snap-center group relative bg-white border border-slate-200 p-8 cursor-pointer transition-all duration-500 hover:border-slate-900 hover:shadow-xl flex flex-col">
+                    <div class="flex justify-between items-start mb-10">
+                        <div class="h-10 w-auto flex items-center">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Cisco_logo_blue_2016.svg" alt="Cisco" class="brand-logo h-10 w-auto">
+                        </div>
+                        <span class="flex items-center gap-1 text-[8px] font-bold text-blue-500 uppercase tracking-widest bg-blue-50 px-2 py-1 verify-pulse"><i class="fas fa-lightbulb"></i> Considering</span>
+                    </div>
+                    <h4 class="text-lg font-serif font-bold text-slate-900 mb-2 group-hover:text-brand-600 transition-colors">Networking Essentials</h4>
+                    <p class="text-[10px] text-slate-400 uppercase tracking-[0.2em]">Infrastructure Logic</p>
+                </div>
+
+                <!-- Cert 6: Coursera -->
+                <div onclick="openCertModal('coursera')" class="flex-shrink-0 w-[85vw] sm:w-[280px] md:w-auto snap-center group relative bg-white border border-slate-200 p-8 cursor-pointer transition-all duration-500 hover:border-slate-900 hover:shadow-xl flex flex-col">
+                    <div class="flex justify-between items-start mb-10">
+                        <div class="h-10 w-auto flex items-center">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/9/97/Coursera-logo_dot_com.svg" alt="Coursera" class="brand-logo h-5 w-auto">
+                        </div>
+                        <span class="flex items-center gap-1 text-[8px] font-bold text-blue-500 uppercase tracking-widest bg-blue-50 px-2 py-1 verify-pulse"><i class="fas fa-lightbulb"></i> Considering</span>
+                    </div>
+                    <h4 class="text-lg font-serif font-bold text-slate-900 mb-2 group-hover:text-brand-600 transition-colors">Financial Markets</h4>
+                    <p class="text-[10px] text-slate-400 uppercase tracking-[0.2em]">Macro Specialization</p>
+                </div>
+            </div>
+            
+            <div class="md:hidden flex justify-center mt-6 text-slate-400 text-[10px] uppercase tracking-[0.2em]">
+                <i class="fas fa-arrows-alt-h animate-pulse mr-2"></i> Swipe to explore
+            </div>
+        </div>
+    </section>
+
+    <!-- Certification Details Modal -->
+    <div id="cert-modal" class="fixed inset-0 z-[60] hidden flex items-center justify-center p-4">
+        <div id="modal-backdrop" class="absolute inset-0 bg-slate-950/60 backdrop-blur-sm transition-opacity opacity-0"></div>
+        <div id="modal-container" class="relative bg-white w-full max-w-lg max-h-[90vh] overflow-y-auto transform translate-y-8 opacity-0 transition-all duration-500 ease-out border border-slate-200 scrollbar-hide">
+            <button id="close-modal" class="absolute top-4 right-4 sm:top-6 sm:right-6 text-slate-400 hover:text-slate-900 p-2 z-10">
+                <i class="fas fa-times text-xl"></i>
+            </button>
+            <div class="p-6 sm:p-10 md:p-12">
+                <div id="modal-badge" class="inline-block px-3 py-1 bg-slate-900 text-white text-[10px] font-bold tracking-widest uppercase mb-6 sm:mb-8">Verification</div>
+                <h3 id="modal-title" class="font-serif text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 mb-6 leading-tight">Certification Name</h3>
+                <div class="w-12 h-[1px] bg-brand-500 mb-6 sm:mb-8"></div>
+                <p id="modal-desc" class="text-slate-500 font-light leading-relaxed mb-8 sm:mb-10 text-sm sm:text-base">Detailed information about what was achieved and the core skills validated by this credential.</p>
+                <div class="flex flex-wrap gap-2 sm:gap-4" id="modal-skills">
+                    <!-- Skills tags will be injected here -->
+                </div>
+                <div class="mt-10 sm:mt-12 pt-6 sm:pt-8 border-t border-slate-100 flex items-center justify-between">
+                    <a id="modal-link" href="#" target="_blank" class="group inline-flex items-center text-[10px] font-bold uppercase tracking-[0.2em] text-slate-900">
+                        View Credential <i class="fas fa-external-link-alt ml-4 text-[8px] transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Work Section -->
+    <section id="work" class="py-24 lg:py-32 bg-white relative border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-12 gap-12 lg:gap-20 items-start">
+                <div class="md:col-span-5 relative md:sticky md:top-32">
+                    <h2 class="text-xs font-bold tracking-[0.2em] text-slate-400 uppercase mb-8 flex items-center">
+                        <span class="w-8 h-[1px] bg-slate-400 mr-3"></span> Experience
+                    </h2>
+                    <h3 class="text-4xl md:text-5xl font-serif text-slate-900 leading-[1.2] font-medium mb-6">
+                        Professional <br /> History
+                    </h3>
+                     <p class="text-lg text-slate-500 font-light max-w-sm leading-relaxed">
+                        A timeline of my work in business intelligence, supply chain, and data analytics.
+                    </p>
+                    <div class="hidden md:block absolute -right-6 lg:-right-10 top-0 w-[1px] h-full bg-slate-200"></div>
+                </div>
+                <div class="md:col-span-7 pt-2 md:pl-4 lg:pl-8">
+                    <div class="group relative pb-10 md:pb-12 border-l border-slate-200 pl-8 md:pl-12 last:border-0 last:pb-0">
+                        <div class="absolute -left-[4.5px] top-1.5 w-2 h-2 bg-slate-300 group-hover:bg-slate-900 transition-colors duration-500"></div>
+                        <div class="flex flex-col">
+                            <span class="text-[10px] md:text-xs font-bold tracking-[0.2em] text-slate-400 uppercase mb-3 block">Dec 2025 — Present</span>
+                            <h4 class="text-2xl md:text-3xl font-serif text-slate-900 mb-1">Betopia Group</h4>
+                            <p class="text-lg md:text-xl font-serif italic text-slate-600">i2i Digital Marketing Training & Internship</p>
+                        </div>
+                    </div>
+                    <div class="group relative pb-10 md:pb-12 border-l border-slate-200 pl-8 md:pl-12 last:border-0 last:pb-0">
+                        <div class="absolute -left-[4.5px] top-1.5 w-2 h-2 bg-slate-300 group-hover:bg-slate-900 transition-colors duration-500"></div>
+                        <div class="flex flex-col">
+                            <span class="text-[10px] md:text-xs font-bold tracking-[0.2em] text-slate-400 uppercase mb-3 block">Nov 2024 — Jan 2026</span>
+                            <h4 class="text-2xl md:text-3xl font-serif text-slate-900 mb-1">Zariwali</h4>
+                            <p class="text-lg md:text-xl font-serif italic text-slate-600">Co-Founder | Lead, Business Intelligence & Supply Chain</p>
+                        </div>
+                    </div>
+                    <div class="group relative border-l border-slate-200 pl-8 md:pl-12 last:border-0">
+                        <div class="absolute -left-[4.5px] top-1.5 w-2 h-2 bg-slate-300 group-hover:bg-slate-900 transition-colors duration-500"></div>
+                        <div class="flex flex-col">
+                            <span class="text-[10px] md:text-xs font-bold tracking-[0.2em] text-slate-400 uppercase mb-3 block">Nov 2024 — Aug 2025</span>
+                            <h4 class="text-2xl md:text-3xl font-serif text-slate-900 mb-1">The Rage House</h4>
+                            <p class="text-lg md:text-xl font-serif italic text-slate-600">Former Co-Founder & Lead BI Analyst</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW Projects Section -->
+    <section id="projects" class="py-24 lg:py-32 bg-slate-900 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-20 border-b border-white/10 pb-8">
+                <div>
+                    <h2 class="text-xs font-bold tracking-[0.3em] text-brand-400 uppercase mb-4">Investigative Works</h2>
+                    <h3 class="text-4xl md:text-6xl font-bold text-white font-serif italic">Case Files.</h3>
+                </div>
+                <div class="hidden md:flex text-slate-500 text-[10px] font-bold uppercase tracking-[0.2em] items-center gap-4">
+                    <span>Explore Methodology</span> <i class="fas fa-chevron-right animate-pulse text-brand-500"></i>
+                </div>
+            </div>
+
+            <!-- CAROUSEL -->
+            <div id="carousel-container" class="flex overflow-x-auto snap-x snap-mandatory gap-6 md:gap-8 pb-12 scrollbar-hide items-stretch">
+                
+                <!-- Card 1: Data Audit -->
+                <div class="project-card w-[85vw] md:w-[26rem] snap-center flex-shrink-0 group relative bg-slate-800 border border-white/5 overflow-hidden flex flex-col min-h-[28rem] transition-all duration-500 hover:border-brand-500/30 hover:bg-slate-800/80">
+                    <div class="relative z-10 p-8 md:p-10 flex flex-col h-full text-white">
+                        <div class="flex justify-between items-start mb-12">
+                            <span class="text-[9px] font-bold uppercase tracking-[0.3em] text-brand-400 border border-brand-400/30 px-3 py-1 bg-brand-400/5">Audit Analysis</span>
+                            <i class="fas fa-database text-white/10 text-2xl"></i>
+                        </div>
+                        <div class="mb-8">
+                            <p class="text-[10px] uppercase tracking-[0.2em] text-slate-400 mb-2">GameZone Global</p>
+                            <h3 class="text-3xl font-serif font-bold leading-tight mb-8 group-hover:text-brand-400 transition-colors">Data Integrity & Supply Chain Audit</h3>
+                            <div class="flex items-center gap-6 py-6 border-y border-white/5">
+                                <div>
+                                    <p class="text-[9px] uppercase tracking-widest text-slate-500 mb-1">Key Accuracy</p>
+                                    <p class="text-2xl font-bold text-brand-400">99.9%</p>
+                                </div>
+                                <div class="w-px h-10 bg-white/10"></div>
+                                <div>
+                                    <p class="text-[9px] uppercase tracking-widest text-slate-500 mb-1">Logic</p>
+                                    <p class="text-xl font-bold text-white uppercase tracking-tighter">Verified</p>
+                                </div>
+                            </div>
+                        </div>
+                        <button onclick="toggleCard(this)" class="mt-auto group/btn flex items-center justify-between w-full text-[10px] font-bold uppercase tracking-[0.2em] cursor-pointer">
+                            <span class="group-hover/btn:text-brand-400 transition-colors">View Methodology</span>
+                            <div class="h-10 w-10 rounded-full border border-white/10 flex items-center justify-center group-hover/btn:bg-white group-hover/btn:text-slate-900 transition-all">
+                                <i class="fas fa-chevron-up text-[10px]"></i>
+                            </div>
+                        </button>
+                    </div>
+
+                    <!-- Details Panel -->
+                    <div class="details-panel transform translate-y-full absolute inset-0 z-20 bg-slate-950 text-white p-10 flex flex-col transition-transform duration-500">
+                        <button onclick="toggleCard(this)" class="absolute top-8 right-8 text-slate-500 hover:text-white p-2 transition-colors"><i class="fas fa-times text-2xl"></i></button>
+                        <div class="my-auto">
+                            <h4 class="text-xs font-bold text-brand-400 tracking-[0.4em] uppercase mb-6">Technical Overview</h4>
+                            <p class="text-base text-slate-300 font-light leading-loose mb-12">
+                                Performed a rigorous Data Cleaning & Logic Audit to produce a "Golden Dataset." This project established a reliable infrastructure for executive reporting, eliminating data discrepancies.
+                            </p>
+                            <a href="https://github.com/Eyasin-terminal/2026-Project-Data_Cleanign_GameZone-Class_B" target="_blank" class="inline-flex items-center text-[10px] font-bold uppercase tracking-widest text-white border-b-2 border-brand-500 pb-1 hover:text-brand-400 transition-colors">GitHub Repository <i class="fas fa-code ml-4"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2: Coming Soon -->
+                <div class="project-card w-[85vw] md:w-[26rem] snap-center flex-shrink-0 group relative bg-slate-800 border border-white/5 overflow-hidden flex flex-col min-h-[28rem] transition-all duration-500 hover:border-brand-500/30 hover:bg-slate-800/80">
+                    <div class="relative z-10 p-8 md:p-10 flex flex-col h-full text-white">
+                        <div class="flex justify-between items-start mb-12">
+                            <span class="text-[9px] font-bold uppercase tracking-[0.3em] text-slate-500 border border-slate-700 px-3 py-1">Coming Soon</span>
+                            <i class="fas fa-clock text-white/10 text-2xl"></i>
+                        </div>
+                        <div class="mb-8">
+                            <p class="text-[10px] uppercase tracking-[0.2em] text-slate-400 mb-2">Next Insight</p>
+                            <h3 class="text-3xl font-serif font-bold leading-tight mb-8 group-hover:text-brand-400 transition-colors italic opacity-50">Analytical Project Underway</h3>
+                            <div class="flex items-center gap-6 py-6 border-y border-white/5">
+                                <div>
+                                    <p class="text-[9px] uppercase tracking-widest text-slate-500 mb-1">Progress</p>
+                                    <p class="text-xl font-bold text-slate-500 tracking-tighter">Drafting</p>
+                                </div>
+                            </div>
+                        </div>
+                        <button onclick="toggleCard(this)" class="mt-auto group/btn flex items-center justify-between w-full text-[10px] font-bold uppercase tracking-[0.2em] cursor-pointer">
+                            <span class="group-hover/btn:text-brand-400 transition-colors">View Preview</span>
+                            <div class="h-10 w-10 rounded-full border border-white/10 flex items-center justify-center group-hover/btn:bg-white group-hover/btn:text-slate-900 transition-all">
+                                <i class="fas fa-chevron-up text-[10px]"></i>
+                            </div>
+                        </button>
+                    </div>
+
+                    <div class="details-panel transform translate-y-full absolute inset-0 z-20 bg-slate-950 text-white p-10 flex flex-col transition-transform duration-500">
+                        <button onclick="toggleCard(this)" class="absolute top-8 right-8 text-slate-500 hover:text-white p-2 transition-colors"><i class="fas fa-times text-2xl"></i></button>
+                        <div class="my-auto">
+                            <h4 class="text-xs font-bold text-brand-400 tracking-[0.4em] uppercase mb-6">Status Update</h4>
+                            <p class="text-base text-slate-300 font-light leading-loose mb-12">
+                                Details regarding this strategic analysis will be published here upon project completion. I am currently finalizing the data visualization and narrative components.
+                            </p>
+                            <span class="text-[10px] font-bold uppercase tracking-widest text-slate-500 border-b border-slate-800 pb-1">Check back soon</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3: Coming Soon -->
+                <div class="project-card w-[85vw] md:w-[26rem] snap-center flex-shrink-0 group relative bg-slate-800 border border-white/5 overflow-hidden flex flex-col min-h-[28rem] transition-all duration-500 hover:border-brand-500/30 hover:bg-slate-800/80">
+                    <div class="relative z-10 p-8 md:p-10 flex flex-col h-full text-white">
+                        <div class="flex justify-between items-start mb-12">
+                            <span class="text-[9px] font-bold uppercase tracking-[0.3em] text-slate-500 border border-slate-700 px-3 py-1">Coming Soon</span>
+                            <i class="fas fa-lock text-white/10 text-2xl"></i>
+                        </div>
+                        <div class="mb-8">
+                            <p class="text-[10px] uppercase tracking-[0.2em] text-slate-400 mb-2">New Entry</p>
+                            <h3 class="text-3xl font-serif font-bold leading-tight mb-8 group-hover:text-brand-400 transition-colors italic opacity-50">Future Case Study Incoming</h3>
+                            <div class="flex items-center gap-6 py-6 border-y border-white/5">
+                                <div>
+                                    <p class="text-[9px] uppercase tracking-widest text-slate-500 mb-1">Estimated</p>
+                                    <p class="text-xl font-bold text-slate-500 tracking-tighter">Q2 2024</p>
+                                </div>
+                            </div>
+                        </div>
+                        <button onclick="toggleCard(this)" class="mt-auto group/btn flex items-center justify-between w-full text-[10px] font-bold uppercase tracking-[0.2em] cursor-pointer">
+                            <span class="group-hover/btn:text-brand-400 transition-colors">View Preview</span>
+                            <div class="h-10 w-10 rounded-full border border-white/10 flex items-center justify-center group-hover/btn:bg-white group-hover/btn:text-slate-900 transition-all">
+                                <i class="fas fa-chevron-up text-[10px]"></i>
+                            </div>
+                        </button>
+                    </div>
+
+                    <div class="details-panel transform translate-y-full absolute inset-0 z-20 bg-slate-950 text-white p-10 flex flex-col transition-transform duration-500">
+                        <button onclick="toggleCard(this)" class="absolute top-8 right-8 text-slate-500 hover:text-white p-2 transition-colors"><i class="fas fa-times text-2xl"></i></button>
+                        <div class="my-auto">
+                            <h4 class="text-xs font-bold text-brand-400 tracking-[0.4em] uppercase mb-6">Future Roadmap</h4>
+                            <p class="text-base text-slate-300 font-light leading-loose mb-12">
+                                This slot is reserved for a deep-dive econometric study. I am currently in the data collection phase, focused on bridging macro-economic indicators with micro-level business metrics.
+                            </p>
+                            <span class="text-[10px] font-bold uppercase tracking-widest text-slate-500 border-b border-slate-800 pb-1">Stay tuned</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="flex justify-center gap-3 mt-6">
+                <div class="carousel-dot w-6 h-1 bg-brand-500 transition-all duration-300"></div>
+                <div class="carousel-dot w-2 h-1 bg-slate-700 transition-all duration-300"></div>
+                <div class="carousel-dot w-2 h-1 bg-slate-700 transition-all duration-300"></div>
+            </div>
+        </div>
+    </section>
+
+<!-- Contact -->
+<section id="contact" class="py-24 lg:py-32 bg-white relative border-t border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid md:grid-cols-12 gap-12 lg:gap-20 items-start">
+            <div class="md:col-span-5 relative md:sticky md:top-32">
+                <h2 class="text-xs font-bold tracking-[0.2em] text-slate-400 uppercase mb-8 flex items-center">
+                    <span class="w-8 h-[1px] bg-slate-400 mr-3"></span> Inquiries
+                </h2>
+                <h3 class="text-4xl md:text-5xl font-serif text-slate-900 leading-[1.2] font-medium mb-8">
+                    Initiate a <br/> Dialogue.
+                </h3>
+                <p class="text-lg text-slate-500 font-light mb-12 max-w-sm leading-relaxed">
+                    Currently accepting new projects, consulting roles, and strategic opportunities. Let's discuss how data can drive your next phase of growth.
+                </p>
+                <div class="space-y-8">
+                    <a href="CV_Eyasin_Arafath.pdf" download class="group inline-flex items-center text-lg font-serif italic text-slate-900 hover:text-slate-500 transition-colors">
+                        <span class="border-b border-slate-900 group-hover:border-slate-500 pb-1 transition-colors">Download Curriculum Vitae</span>
+                        <i class="fas fa-download ml-4 text-xs opacity-70 group-hover:opacity-100 transition-all transform group-hover:translate-y-1"></i>
+                    </a>
+                    <div class="flex space-x-8 pt-4">
+                        <a href="https://linkedin.com" target="_blank" class="text-slate-900 hover:text-slate-500 transition-colors text-xl">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="mailto:eyasin.113t@gmail.com" class="text-slate-900 hover:text-slate-500 transition-colors text-xl">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="hidden md:block absolute -right-6 lg:-right-10 top-0 w-[1px] h-full bg-slate-200"></div>
+            </div>
+
+            <div class="md:col-span-7 pt-2 md:pl-4 lg:pl-8">
+                <div id="contact-success" class="hidden bg-slate-900 text-white p-10 mb-8 animate-[fadeIn_0.5s_ease-out]">
+                    <h4 class="font-serif text-2xl mb-4 italic">Message Received.</h4>
+                    <p class="text-slate-400 font-light leading-relaxed">Thank you for reaching out. I have received your inquiry and will review the details shortly.</p>
+                </div>
+
+                <form id="contact-form" action="https://formspree.io/f/xvzwoqok" method="POST" class="space-y-12">
+                    <div class="grid md:grid-cols-2 gap-12">
+                        <div class="flex flex-col">
+                            <label for="name" class="text-xs font-bold tracking-[0.2em] text-slate-900 uppercase mb-4">Name</label>
+                            <input type="text" id="name" name="name" 
+                                   class="w-full bg-transparent border-b border-slate-300 py-2 text-slate-900 font-serif text-lg focus:outline-none focus:border-slate-900 transition-colors rounded-none placeholder-slate-300" 
+                                   placeholder="John Doe" required>
+                        </div>
+                        <div class="flex flex-col">
+                            <label for="email" class="text-xs font-bold tracking-[0.2em] text-slate-900 uppercase mb-4">Email</label>
+                            <input type="email" id="email" name="email" 
+                                   class="w-full bg-transparent border-b border-slate-300 py-2 text-slate-900 font-serif text-lg focus:outline-none focus:border-slate-900 transition-colors rounded-none placeholder-slate-300" 
+                                   placeholder="john@example.com" required>
+                        </div>
+                    </div>
+                    <div class="flex flex-col">
+                        <label for="message" class="text-xs font-bold tracking-[0.2em] text-slate-900 uppercase mb-4">Message</label>
+                        <textarea id="message" name="message" rows="5" 
+                                  class="w-full bg-transparent border-b border-slate-300 py-2 text-slate-900 font-serif text-lg focus:outline-none focus:border-slate-900 transition-colors rounded-none placeholder-slate-300 resize-none" 
+                                  placeholder="Detail your inquiry..." required></textarea>
+                    </div>
+                    <div class="pt-6">
+                        <button type="submit" id="submit-btn" class="w-full md:w-auto px-12 py-5 bg-slate-900 text-white font-bold tracking-[0.2em] text-xs uppercase hover:bg-slate-700 transition-colors duration-300 rounded-none cursor-pointer">
+                            Submit Inquiry
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 py-16 md:py-24 border-t border-slate-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-end">
+                <div class="order-2 md:order-1 flex flex-col justify-end">
+                    <h4 class="text-3xl font-serif text-white mb-8">Eyasin Arafath.</h4>
+                    <div class="space-y-3 text-xs font-bold tracking-[0.2em] text-slate-500 uppercase mb-16">
+                        <p class="flex items-center">
+                            <span class="w-6 h-[1px] bg-slate-800 mr-4"></span>
+                            Engineered with <span class="text-white ml-2">Google Gemini</span>
+                        </p>
+                        <p class="flex items-center">
+                            <span class="w-6 h-[1px] bg-slate-800 mr-4"></span>
+                            Hosted via <span class="text-white ml-2">GitHub</span>
+                        </p>
+                        <p class="flex items-center">
+                            <span class="w-6 h-[1px] bg-slate-800 mr-4"></span>
+                            Built by <span class="text-white ml-2">Eyasin Arafath</span>
+                        </p>
+                    </div>
+                    <p class="text-[10px] tracking-[0.2em] text-slate-600 uppercase">&copy; 2024. All rights reserved.</p>
+                </div>
+                <div class="order-1 md:order-2 flex flex-col md:items-end">
+                    <div class="text-xs font-bold tracking-[0.2em] uppercase mb-4 text-white flex items-center">
+                        <i class="fas fa-crosshairs text-slate-600 mr-3"></i> Based in Dhaka, BGD
+                    </div>
+                    <div class="w-48 h-48 md:w-56 md:h-56 border border-slate-800 p-2 bg-slate-900 relative group overflow-hidden">
+                        <div class="absolute inset-0 z-10 flex items-center justify-center pointer-events-none">
+                            <div class="w-4 h-4 bg-white rounded-full shadow-[0_0_15px_rgba(255,255,255,0.5)] relative flex items-center justify-center">
+                                <div class="w-12 h-12 border border-white/30 rounded-full absolute animate-ping"></div>
+                            </div>
+                        </div>
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d116834.00977793541!2d90.3372880402047!3d23.780777744485547!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755b8b087026b81%3A0x8fa563bbdd5904c2!2sDhaka!5e0!3m2!1sen!2sbd!4v1715421526487!5m2!1sen!2sbd" 
+                            class="w-full h-full grayscale opacity-40 contrast-125 pointer-events-none select-none transition-opacity duration-700 group-hover:opacity-60" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Go To Top Button -->
+    <button id="go-to-top" class="fixed bottom-8 right-8 z-[100] w-12 h-12 bg-slate-900 text-white flex items-center justify-center rounded-full shadow-2xl opacity-0 invisible hover:bg-brand-600 active:scale-90 transition-all duration-300 cursor-pointer" title="Go to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+<!-- Scripts -->
+    <script>
+    // --- Certification Data ---
+    const certifications = {
+        binance: {
+            title: "Binance Certified: The Fundementals of Blockchain and Crypto",
+            desc: "Introductory overview of the blockchain ecosystem, equipping beginners with the fundamental concepts needed to navigate the cryptocurrency space",
+            skills: ["Blockchain technology", "Web3 Fundamentals", "Crypto Trading Basics", "Non-Fungible Tokens (NFTs)"],
+            link: "https://www.binance.com/en/academy/track/beginner-track?utm_medium=web_share_copy"
+        },
+        google: {
+            title: "Advanced Google Analytics Certification",
+            desc: "Comprehensive mastery of Google Analytics 4 (GA4). Focused on user behavior analysis, conversion tracking, and translating web metrics into actionable marketing strategies.",
+            skills: ["GA4", "Event Tracking", "User Attribution", "Audience Analysis"],
+            link: "https://skillshop.google.com/"
+        },
+        tableau: {
+            title: "Tableau Desktop Specialist",
+            desc: "Professional validation of core Tableau concepts. Skilled in data preparation, exploratory analysis, and crafting interactive dashboards that simplify complex data narratives.",
+            skills: ["Tableau Desktop", "Visual Best Practices", "Calculated Fields", "Storytelling"],
+            link: "https://www.tableau.com/learn/certification/desktop-specialist"
+        },
+        ibm: {
+            title: "Statistics for Data Science with Python",
+            desc: "Applied Python to perform descriptive statistics, data visualization, hypothesis testing (T-tests and ANOVA), and regression analysis on real datasets. Interpreted statistical results to generate data-driven insights and demonstrated these skills through a comprehensive final project.",
+            skills: ["Python(EDA)", "Statistics", "Data visualization", "Regression","Hypothesis Test"],
+            link: "https://www.coursera.org/account/accomplishments/verify/DVQGW08PC1FK"
+        },
+        cisco: {
+            title: "Cisco Networking Essentials",
+            desc: "Foundational knowledge of networking infrastructure, protocols, and security. Critical for understanding the technical pipelines where enterprise data flows.",
+            skills: ["IP Addressing", "Network Security", "Protocols", "Infrastructure"],
+            link: "https://www.netacad.com/"
+        },
+        coursera: {
+            title: "Macroeconomics & Financial Markets Specialization",
+            desc: "Economic theory focused on global financial systems. Bridging the gap between macro indicators and corporate data-driven decision making.",
+            skills: ["Economic Forecasting", "Financial Analysis", "Macro Theory", "Risk Assessment"],
+            link: "https://www.coursera.org/"
+        }
+    };
+
+    // --- Modal Logic ---
+    const certModal = document.getElementById('cert-modal');
+    const modalContainer = document.getElementById('modal-container');
+    const modalBackdrop = document.getElementById('modal-backdrop');
+    const closeModalBtn = document.getElementById('close-modal');
+
+    // Exposed to window so inline onclick handlers in the grid work
+    window.openCertModal = function(certId) {
+        const data = certifications[certId];
+        if (!data) return;
+
+        document.getElementById('modal-title').innerText = data.title;
+        document.getElementById('modal-desc').innerText = data.desc;
+        document.getElementById('modal-link').href = data.link;
+
+        const skillsContainer = document.getElementById('modal-skills');
+        skillsContainer.innerHTML = '';
+        data.skills.forEach(skill => {
+            const span = document.createElement('span');
+            span.className = "px-3 py-1.5 border border-slate-200 text-slate-500 text-[10px] font-bold uppercase tracking-widest";
+            span.innerText = skill;
+            skillsContainer.appendChild(span);
+        });
+
+        certModal.classList.remove('hidden');
+        setTimeout(() => {
+            modalBackdrop.classList.replace('opacity-0', 'opacity-100');
+            modalContainer.classList.replace('translate-y-8', 'translate-y-0');
+            modalContainer.classList.replace('opacity-0', 'opacity-100');
+        }, 10);
+        document.body.style.overflow = 'hidden';
+    };
+
+    function closeCertModal() {
+        modalBackdrop.classList.replace('opacity-100', 'opacity-0');
+        modalContainer.classList.replace('translate-y-0', 'translate-y-8');
+        modalContainer.classList.replace('opacity-100', 'opacity-0');
+        setTimeout(() => {
+            certModal.classList.add('hidden');
+            document.body.style.overflow = '';
+        }, 500);
+    }
+
+    // Modal Event Listeners
+    if (closeModalBtn) closeModalBtn.addEventListener('click', closeCertModal);
+    if (modalBackdrop) modalBackdrop.addEventListener('click', closeCertModal);
+
+    // Navigation Toggle Logic (UPGRADED)
+    const btn = document.getElementById('mobile-menu-btn');
+    const menu = document.getElementById('mobile-menu');
+    const line1 = document.querySelector('.menu-line-1');
+    const line2 = document.querySelector('.menu-line-2');
+    const line3 = document.querySelector('.menu-line-3');
+    const mobileLinks = document.querySelectorAll('.mobile-link');
+
+    if (btn && menu) {
+        const toggleMenu = () => {
+            const isOpen = btn.classList.contains('active');
+            
+            if (!isOpen) {
+                // Open State: Morph to X and slide menu down
+                btn.classList.add('active');
+                line1.classList.replace('-translate-y-1.5', 'rotate-45');
+                line2.classList.add('opacity-0');
+                line3.classList.replace('translate-y-1.5', '-rotate-45');
+                
+                menu.classList.remove('opacity-0', '-translate-y-4', 'pointer-events-none');
+                menu.classList.add('opacity-100', 'translate-y-0', 'pointer-events-auto');
+            } else {
+                // Close State: Morph back to hamburger and slide menu up
+                btn.classList.remove('active');
+                line1.classList.replace('rotate-45', '-translate-y-1.5');
+                line2.classList.remove('opacity-0');
+                line3.classList.replace('-rotate-45', 'translate-y-1.5');
+                
+                menu.classList.remove('opacity-100', 'translate-y-0', 'pointer-events-auto');
+                menu.classList.add('opacity-0', '-translate-y-4', 'pointer-events-none');
+            }
+        };
+
+        btn.addEventListener('click', toggleMenu);
+
+        // Auto-close menu when a link is clicked
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if(btn.classList.contains('active')) toggleMenu();
+            });
+        });
+    }
+
+    // Project Card Toggle
+    window.toggleCard = function(element) {
+        const card = element.closest('.project-card');
+        if (!card) return;
+        const panel = card.querySelector('.details-panel');
+        if (!panel) return;
+        const isOpen = panel.classList.contains('translate-y-0');
+        document.querySelectorAll('.details-panel').forEach(p => {
+            p.classList.remove('translate-y-0');
+            p.classList.add('translate-y-full');
+        });
+        if (!isOpen) {
+            panel.classList.remove('translate-y-full');
+            panel.classList.add('translate-y-0');
+        } 
+    };
+    
+    // Core Initializer
+    document.addEventListener('DOMContentLoaded', () => {
+
+        // 2. Carousel Logic (Applied to both certificates on mobile and projects)
+        const setupCarousel = (containerId, dotClass) => {
+            const container = document.getElementById(containerId);
+            const dots = document.querySelectorAll(dotClass);
+            if (container && dots.length > 0) {
+                // Determine which children to observe
+                let observeTargets;
+                if(containerId === 'carousel-container') {
+                    observeTargets = container.querySelectorAll('.project-card');
+                } else if(containerId === 'cert-container') {
+                    // For certificates, only observe if we are on mobile (where horizontal scrolling happens)
+                    if (window.innerWidth >= 768) return; 
+                    observeTargets = Array.from(container.children);
+                }
+
+                if(!observeTargets || observeTargets.length === 0) return;
+
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const index = Array.from(observeTargets).indexOf(entry.target);
+                            // Safety check to ensure we don't out-of-bounds error on dots
+                            if(index >= 0 && index < dots.length) {
+                                dots.forEach((dot, i) => {
+                                    if (i === index) {
+                                        // Specific active colors based on section
+                                        if(containerId === 'carousel-container') {
+                                            dot.classList.remove('bg-slate-700', 'w-2');
+                                            dot.classList.add('bg-brand-500', 'w-8'); // Using the brand color for projects
+                                        } else {
+                                            dot.classList.remove('bg-slate-300', 'w-2');
+                                            dot.classList.add('bg-slate-900', 'w-6');
+                                        }
+                                    } else {
+                                        if(containerId === 'carousel-container') {
+                                            dot.classList.add('bg-slate-700', 'w-2');
+                                            dot.classList.remove('bg-brand-500', 'w-8');
+                                        } else {
+                                            dot.classList.add('bg-slate-300', 'w-2');
+                                            dot.classList.remove('bg-slate-900', 'w-6');
+                                        }
+                                    }
+                                });
+                            }
+                        }
+                    });
+                }, { root: container, threshold: 0.6 });
+                observeTargets.forEach(target => observer.observe(target));
+            }
+        };
+
+        setupCarousel('carousel-container', '.carousel-dot');
+
+        // 3. Contact Form Logic
+        const contactForm = document.getElementById("contact-form");
+        const successMessage = document.getElementById("contact-success");
+        const submitBtn = document.getElementById("submit-btn");
+        if (contactForm) {
+            contactForm.addEventListener("submit", async function(e) {
+                e.preventDefault(); 
+                submitBtn.innerText = "SENDING...";
+                submitBtn.disabled = true;
+                const formData = new FormData(contactForm);
+                try {
+                    const response = await fetch(contactForm.action, {
+                        method: 'POST',
+                        body: formData,
+                        headers: { 'Accept': 'application/json' }
+                    });
+                    if (response.ok) {
+                        contactForm.classList.add("hidden");
+                        successMessage.classList.remove("hidden");
+                    } else {
+                        alert("Problem submitting your form.");
+                        submitBtn.innerText = "SUBMIT INQUIRY";
+                        submitBtn.disabled = false;
+                    }
+                } catch (error) {
+                    alert("Network error.");
+                    submitBtn.innerText = "SUBMIT INQUIRY";
+                    submitBtn.disabled = false;
+                }
+            });
+        }
+
+        // 4. Go To Top Button Logic
+        const goToTopBtn = document.getElementById('go-to-top');
+        if (goToTopBtn) {
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 500) {
+                    goToTopBtn.classList.remove('opacity-0', 'invisible');
+                    goToTopBtn.classList.add('opacity-100', 'visible');
+                } else {
+                    goToTopBtn.classList.add('opacity-0', 'invisible');
+                    goToTopBtn.classList.remove('opacity-100', 'visible');
+                }
+            });
+
+            goToTopBtn.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        }
+    });
+
+    // Global Styles Injection (Preserved from original)
+    const styleSheet = document.createElement("style");
+    styleSheet.innerText = `
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    `;
+    document.head.appendChild(styleSheet);
+    </script>
+</body>
+</html>
