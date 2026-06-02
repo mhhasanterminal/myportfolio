@@ -2242,6 +2242,21 @@ rate across batch deliveries.</code></pre>
                     // SAVE TO SESSION STORAGE (So data survives page refresh)
                     sessionStorage.setItem('recruiterTelemetry', JSON.stringify(telemetry));
 
+if (telemetry.timeInvested % 30 === 0 && telemetry.timeInvested > 0) {
+    gtag('event', 'telemetry_update', {
+        time_invested_seconds: telemetry.timeInvested,
+        scroll_depth_pct: telemetry.maxScrollDepth,
+        scroll_reversals: telemetry.scrollReversals,
+        focus_score_pct: focusScore,
+        top_section: topSection,
+        section_about_seconds: telemetry.sectionHover.about,
+        section_work_seconds: telemetry.sectionHover.work,
+        section_projects_seconds: telemetry.sectionHover.projects,
+        section_certs_seconds: telemetry.sectionHover.certifications,
+        section_articles_seconds: telemetry.sectionHover.articles
+    });
+}
+
                 }, 1000);
             }
         });
