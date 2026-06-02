@@ -324,7 +324,22 @@
         .group:hover .data-toggle-btn, .data-toggle-btn.active { opacity: 1; }
         .data-toggle-btn:hover { background: var(--color-white); color: var(--color-black); }
         .raw-data-overlay::-webkit-scrollbar { width: 6px; }
-        .raw-data-overlay::-webkit-scrollbar-thumb { background: var(--color-sage); }
+       .raw-data-overlay::-webkit-scrollbar-thumb { background: var(--color-sage); }
+
+        /* Logo Marquee Animation */
+        .logo-marquee {
+            animation: logoScroll 30s linear infinite;
+        }
+
+        .logo-marquee:hover {
+            animation-play-state: paused;
+        }
+
+        @keyframes logoScroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+    </style>
     </style>
 </head>
 <body class="bg-white text-black overflow-x-hidden">
@@ -458,7 +473,8 @@
 
     <!-- Tech Stack Marquee Divider -->
   <!-- Tools & Software Logo Strip -->
-<div class="w-full bg-white border-y border-gray-100 py-10">
+<!-- Tools & Software Logo Strip -->
+<div class="w-full bg-white border-y border-gray-100 py-10 overflow-hidden">
     <div class="max-w-7xl mx-auto px-6">
 
         <!-- Label -->
@@ -466,120 +482,237 @@
             Tools & Expertise
         </p>
 
-        <!-- Logo Row -->
-        <div class="flex flex-wrap justify-center items-center gap-x-12 gap-y-6">
+    </div>
+
+    <!-- Scrolling Logo Track -->
+    <div class="relative w-full overflow-hidden">
+        <div class="logo-marquee flex items-center gap-16 w-max">
+
+            <!-- SET 1 -->
 
             <!-- Power BI -->
-            <div class="flex items-center group">
+            <div class="flex items-center shrink-0">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg"
-                     alt="Power BI" class="h-8 w-auto grayscale opacity-50 group-hover:grayscale-0 group-hover:opacity-100 custom-transition">
+                     alt="Power BI" class="h-8 w-auto grayscale opacity-50 hover:grayscale-0 hover:opacity-100 custom-transition">
             </div>
 
             <!-- Tableau -->
-            <div class="flex items-center group">
+            <div class="flex items-center shrink-0">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/4/4b/Tableau_Logo.png"
-                     alt="Tableau" class="h-8 w-auto grayscale opacity-50 group-hover:grayscale-0 group-hover:opacity-100 custom-transition">
+                     alt="Tableau" class="h-8 w-auto grayscale opacity-50 hover:grayscale-0 hover:opacity-100 custom-transition">
             </div>
 
             <!-- Excel -->
-            <div class="flex items-center group">
+            <div class="flex items-center shrink-0">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/3/34/Microsoft_Office_Excel_%282019%E2%80%93present%29.svg"
-                     alt="Excel" class="h-8 w-auto grayscale opacity-50 group-hover:grayscale-0 group-hover:opacity-100 custom-transition">
+                     alt="Excel" class="h-8 w-auto grayscale opacity-50 hover:grayscale-0 hover:opacity-100 custom-transition">
             </div>
 
             <!-- Python -->
-            <div class="flex items-center group">
+            <div class="flex items-center shrink-0">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg"
-                     alt="Python" class="h-8 w-auto grayscale opacity-50 group-hover:grayscale-0 group-hover:opacity-100 custom-transition">
+                     alt="Python" class="h-8 w-auto grayscale opacity-50 hover:grayscale-0 hover:opacity-100 custom-transition">
             </div>
 
             <!-- MySQL -->
-            <div class="flex items-center group">
+            <div class="flex items-center shrink-0">
                 <img src="https://upload.wikimedia.org/wikipedia/en/d/dd/MySQL_logo.svg"
-                     alt="MySQL" class="h-8 w-auto grayscale opacity-50 group-hover:grayscale-0 group-hover:opacity-100 custom-transition">
+                     alt="MySQL" class="h-8 w-auto grayscale opacity-50 hover:grayscale-0 hover:opacity-100 custom-transition">
             </div>
 
             <!-- SPSS -->
-            <div class="flex items-center group">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/IBM_SPSS_Statistics_Logomark.svg/640px-IBM_SPSS_Statistics_Logomark.svg.png"
-                     alt="SPSS" class="h-8 w-auto grayscale opacity-50 group-hover:grayscale-0 group-hover:opacity-100 custom-transition">
+            <div class="flex items-center shrink-0">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/7/7d/IBM_SPSS_Statistics_Logomark.svg"
+                     alt="SPSS" class="h-8 w-auto grayscale opacity-50 hover:grayscale-0 hover:opacity-100 custom-transition">
             </div>
 
             <!-- R -->
-            <div class="flex items-center group">
+            <div class="flex items-center shrink-0">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/R_logo.svg"
-                     alt="R" class="h-8 w-auto grayscale opacity-50 group-hover:grayscale-0 group-hover:opacity-100 custom-transition">
+                     alt="R" class="h-8 w-auto grayscale opacity-50 hover:grayscale-0 hover:opacity-100 custom-transition">
             </div>
 
             <!-- Google Sheets -->
-            <div class="flex items-center group">
+            <div class="flex items-center shrink-0">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/3/30/Google_Sheets_logo_%282014-2020%29.svg"
-                     alt="Google Sheets" class="h-8 w-auto grayscale opacity-50 group-hover:grayscale-0 group-hover:opacity-100 custom-transition">
+                     alt="Google Sheets" class="h-8 w-auto grayscale opacity-50 hover:grayscale-0 hover:opacity-100 custom-transition">
             </div>
 
             <!-- Notion -->
-            <div class="flex items-center group">
+            <div class="flex items-center shrink-0">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/4/45/Notion_app_logo.png"
-                     alt="Notion" class="h-8 w-auto grayscale opacity-50 group-hover:grayscale-0 group-hover:opacity-100 custom-transition">
+                     alt="Notion" class="h-8 w-auto grayscale opacity-50 hover:grayscale-0 hover:opacity-100 custom-transition">
             </div>
 
             <!-- ClickUp -->
-            <div class="flex items-center group">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/ClickUp-Logo-2019.png"
-                     alt="ClickUp" class="h-8 w-auto grayscale opacity-50 group-hover:grayscale-0 group-hover:opacity-100 custom-transition">
+            <div class="flex items-center shrink-0">
+                <img src="https://cdn.worldvectorlogo.com/logos/clickup-symbol-1.svg"
+                     alt="ClickUp" class="h-8 w-auto grayscale opacity-50 hover:grayscale-0 hover:opacity-100 custom-transition">
             </div>
 
             <!-- Google Analytics -->
-            <div class="flex items-center group">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/8/89/Google-Analytics-Logo.svg"
-                     alt="Google Analytics" class="h-8 w-auto grayscale opacity-50 group-hover:grayscale-0 group-hover:opacity-100 custom-transition">
+            <div class="flex items-center shrink-0">
+                <img src="https://www.gstatic.com/analytics-suite/header/suite/v2/ic_analytics.svg"
+                     alt="Google Analytics" class="h-8 w-auto grayscale opacity-50 hover:grayscale-0 hover:opacity-100 custom-transition">
             </div>
 
-            <!-- Microsoft Office Suite -->
-            <div class="flex items-center group">
+            <!-- Microsoft Office -->
+            <div class="flex items-center shrink-0">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/5/5f/Microsoft_Office_logo_%282019%E2%80%93present%29.svg"
-                     alt="Microsoft Office" class="h-8 w-auto grayscale opacity-50 group-hover:grayscale-0 group-hover:opacity-100 custom-transition">
+                     alt="Microsoft Office" class="h-8 w-auto grayscale opacity-50 hover:grayscale-0 hover:opacity-100 custom-transition">
             </div>
 
             <!-- Canva -->
-            <div class="flex items-center group">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/b/bb/Canva_Logo.svg"
-                     alt="Canva" class="h-8 w-auto grayscale opacity-50 group-hover:grayscale-0 group-hover:opacity-100 custom-transition">
+            <div class="flex items-center shrink-0">
+                <img src="https://cdn.worldvectorlogo.com/logos/canva-1.svg"
+                     alt="Canva" class="h-8 w-auto grayscale opacity-50 hover:grayscale-0 hover:opacity-100 custom-transition">
             </div>
 
             <!-- LinkedIn -->
-            <div class="flex items-center group">
+            <div class="flex items-center shrink-0">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png"
-                     alt="LinkedIn Campaign" class="h-8 w-auto grayscale opacity-50 group-hover:grayscale-0 group-hover:opacity-100 custom-transition">
+                     alt="LinkedIn Campaign" class="h-8 w-auto grayscale opacity-50 hover:grayscale-0 hover:opacity-100 custom-transition">
             </div>
 
             <!-- KoboToolbox -->
-            <div class="flex items-center group">
-                <img src="https://www.kobotoolbox.org/static/img/kobo-logo.png"
-                     alt="KoboToolbox" class="h-8 w-auto grayscale opacity-50 group-hover:grayscale-0 group-hover:opacity-100 custom-transition">
+            <div class="flex items-center shrink-0">
+                <img src="https://cdn.worldvectorlogo.com/logos/kobo-toolbox.svg"
+                     alt="KoboToolbox" class="h-8 w-auto grayscale opacity-50 hover:grayscale-0 hover:opacity-100 custom-transition">
             </div>
 
             <!-- STATA -->
-            <div class="flex items-center group">
+            <div class="flex items-center shrink-0">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Stata_Logo.svg"
-                     alt="STATA" class="h-8 w-auto grayscale opacity-50 group-hover:grayscale-0 group-hover:opacity-100 custom-transition">
+                     alt="STATA" class="h-8 w-auto grayscale opacity-50 hover:grayscale-0 hover:opacity-100 custom-transition">
             </div>
 
             <!-- Zotero -->
-            <div class="flex items-center group">
+            <div class="flex items-center shrink-0">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/8/8b/Zotero_Logo.svg"
-                     alt="Zotero" class="h-8 w-auto grayscale opacity-50 group-hover:grayscale-0 group-hover:opacity-100 custom-transition">
+                     alt="Zotero" class="h-8 w-auto grayscale opacity-50 hover:grayscale-0 hover:opacity-100 custom-transition">
             </div>
+
             <!-- SmartPLS -->
-           <div class="flex items-center group">
+            <div class="flex items-center shrink-0">
+                <img src="assets/smartpls_logo.png"
+                     alt="SmartPLS" class="h-8 w-auto grayscale opacity-50 hover:grayscale-0 hover:opacity-100 custom-transition">
+            </div>
+
+
+            <!-- SET 2 — exact copy for seamless infinite loop -->
+
+            <!-- Power BI -->
+            <div class="flex items-center shrink-0">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg"
+                     alt="Power BI" class="h-8 w-auto grayscale opacity-50 hover:grayscale-0 hover:opacity-100 custom-transition">
+            </div>
+
+            <!-- Tableau -->
+            <div class="flex items-center shrink-0">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/4/4b/Tableau_Logo.png"
+                     alt="Tableau" class="h-8 w-auto grayscale opacity-50 hover:grayscale-0 hover:opacity-100 custom-transition">
+            </div>
+
+            <!-- Excel -->
+            <div class="flex items-center shrink-0">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/3/34/Microsoft_Office_Excel_%282019%E2%80%93present%29.svg"
+                     alt="Excel" class="h-8 w-auto grayscale opacity-50 hover:grayscale-0 hover:opacity-100 custom-transition">
+            </div>
+
+            <!-- Python -->
+            <div class="flex items-center shrink-0">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg"
+                     alt="Python" class="h-8 w-auto grayscale opacity-50 hover:grayscale-0 hover:opacity-100 custom-transition">
+            </div>
+
+            <!-- MySQL -->
+            <div class="flex items-center shrink-0">
+                <img src="https://upload.wikimedia.org/wikipedia/en/d/dd/MySQL_logo.svg"
+                     alt="MySQL" class="h-8 w-auto grayscale opacity-50 hover:grayscale-0 hover:opacity-100 custom-transition">
+            </div>
+
+            <!-- SPSS -->
+            <div class="flex items-center shrink-0">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/7/7d/IBM_SPSS_Statistics_Logomark.svg"
+                     alt="SPSS" class="h-8 w-auto grayscale opacity-50 hover:grayscale-0 hover:opacity-100 custom-transition">
+            </div>
+
+            <!-- R -->
+            <div class="flex items-center shrink-0">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/R_logo.svg"
+                     alt="R" class="h-8 w-auto grayscale opacity-50 hover:grayscale-0 hover:opacity-100 custom-transition">
+            </div>
+
+            <!-- Google Sheets -->
+            <div class="flex items-center shrink-0">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/3/30/Google_Sheets_logo_%282014-2020%29.svg"
+                     alt="Google Sheets" class="h-8 w-auto grayscale opacity-50 hover:grayscale-0 hover:opacity-100 custom-transition">
+            </div>
+
+            <!-- Notion -->
+            <div class="flex items-center shrink-0">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/4/45/Notion_app_logo.png"
+                     alt="Notion" class="h-8 w-auto grayscale opacity-50 hover:grayscale-0 hover:opacity-100 custom-transition">
+            </div>
+
+            <!-- ClickUp -->
+            <div class="flex items-center shrink-0">
+                <img src="https://cdn.worldvectorlogo.com/logos/clickup-symbol-1.svg"
+                     alt="ClickUp" class="h-8 w-auto grayscale opacity-50 hover:grayscale-0 hover:opacity-100 custom-transition">
+            </div>
+
+            <!-- Google Analytics -->
+            <div class="flex items-center shrink-0">
+                <img src="https://www.gstatic.com/analytics-suite/header/suite/v2/ic_analytics.svg"
+                     alt="Google Analytics" class="h-8 w-auto grayscale opacity-50 hover:grayscale-0 hover:opacity-100 custom-transition">
+            </div>
+
+            <!-- Microsoft Office -->
+            <div class="flex items-center shrink-0">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/5/5f/Microsoft_Office_logo_%282019%E2%80%93present%29.svg"
+                     alt="Microsoft Office" class="h-8 w-auto grayscale opacity-50 hover:grayscale-0 hover:opacity-100 custom-transition">
+            </div>
+
+            <!-- Canva -->
+            <div class="flex items-center shrink-0">
+                <img src="https://cdn.worldvectorlogo.com/logos/canva-1.svg"
+                     alt="Canva" class="h-8 w-auto grayscale opacity-50 hover:grayscale-0 hover:opacity-100 custom-transition">
+            </div>
+
+            <!-- LinkedIn -->
+            <div class="flex items-center shrink-0">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png"
+                     alt="LinkedIn Campaign" class="h-8 w-auto grayscale opacity-50 hover:grayscale-0 hover:opacity-100 custom-transition">
+            </div>
+
+            <!-- KoboToolbox -->
+            <div class="flex items-center shrink-0">
+                <img src="https://cdn.worldvectorlogo.com/logos/kobo-toolbox.svg"
+                     alt="KoboToolbox" class="h-8 w-auto grayscale opacity-50 hover:grayscale-0 hover:opacity-100 custom-transition">
+            </div>
+
+            <!-- STATA -->
+            <div class="flex items-center shrink-0">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Stata_Logo.svg"
+                     alt="STATA" class="h-8 w-auto grayscale opacity-50 hover:grayscale-0 hover:opacity-100 custom-transition">
+            </div>
+
+            <!-- Zotero -->
+            <div class="flex items-center shrink-0">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/8/8b/Zotero_Logo.svg"
+                     alt="Zotero" class="h-8 w-auto grayscale opacity-50 hover:grayscale-0 hover:opacity-100 custom-transition">
+            </div>
+
+            <!-- SmartPLS -->
+            <div class="flex items-center shrink-0">
                 <img src="assets/Smart pls logo.png" 
-                     alt="SmartPLS" class="h-8 w-auto grayscale opacity-50 group-hover:grayscale-0 group-hover:opacity-100 custom-transition">
+                     alt="SmartPLS" class="h-8 w-auto grayscale opacity-50 hover:grayscale-0 hover:opacity-100 custom-transition">
             </div>
 
         </div>
     </div>
-</div> 
-
+</div>
+    
     <!-- About Me Section -->
     <section id="about" class="py-24 bg-gray-50 border-t border-gray-200">
         <div class="max-w-7xl mx-auto px-6">
