@@ -436,12 +436,12 @@
             <div class="flex flex-col gap-8">
 
                 <!-- Small label badge -->
-                <div class="inline-flex items-center gap-2 w-fit">
-                    <span class="w-2 h-2 bg-black rounded-full animate-pulse"></span>
-                    <span class="text-xs font-mono font-bold uppercase tracking-widest text-gray-500">
-                        Available for new opportunities
-                    </span>
-                </div>
+                <div class="inline-flex items-center gap-2 w-fit border border-gray-600 rounded-full px-4 py-2 bg-white/5">
+    <span class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
+    <span class="text-xs font-mono font-bold uppercase tracking-widest text-gray-300">
+        Available for new opportunities
+    </span>
+</div> 
 
                 <!-- Main Headline -->
                 <div>
@@ -488,52 +488,55 @@
             </div>
 
             <!-- Right: Stats & Visual Card -->
-            <div class="flex flex-col gap-6">
+        <!-- Right: Stats & Visual Card -->
+<div class="flex flex-col gap-4">
 
-                <!-- Main Visual Card -->
-                <div class="relative bg-gray-50 border border-gray-200 rounded-2xl p-8 overflow-hidden">
+    <!-- Main Visual Card — taller to match heading height -->
+    <div class="relative bg-white/5 border border-white/10 rounded-2xl p-6 overflow-hidden" style="min-height: 340px;">
 
-                    <!-- Card label -->
-                    <div class="absolute top-4 left-4 bg-black text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest">
-                        Live Analytics
-                    </div>
+        <!-- Card label -->
+        <div class="inline-flex items-center gap-2 bg-white text-black text-[10px] font-bold px-3 py-1.5 rounded-full uppercase tracking-widest mb-4">
+            Live Analytics
+        </div>
 
-                    <!-- Chart -->
-                    <div class="w-full h-48 relative pt-8">
-                        <canvas id="heroChart"></canvas>
-                        <div id="current-month-marker" class="absolute hidden flex-col items-center justify-center pointer-events-none z-10 transform -translate-x-1/2 -translate-y-1/2">
-                            <div class="bg-black text-white text-[10px] font-bold px-3 py-1 mb-1 rounded-full whitespace-nowrap">
-                                I am here
-                            </div>
-                            <div class="w-8 h-8 rounded-full border-2 border-black overflow-hidden bg-white">
-                                <img src="assets/about_section.png" alt="Me" class="w-full h-full object-cover">
-                            </div>
-                        </div>
-                    </div>
-
+        <!-- Chart — taller -->
+        <div class="w-full relative" style="height: 260px;">
+            <canvas id="heroChart"></canvas>
+            <div id="current-month-marker" class="absolute hidden flex-col items-center justify-center pointer-events-none z-10 transform -translate-x-1/2 -translate-y-1/2">
+                <div class="bg-white text-black text-[10px] font-bold px-3 py-1 mb-1 rounded-full whitespace-nowrap shadow-lg">
+                    I am here
                 </div>
-
-                <!-- Stats Row -->
-                <div class="grid grid-cols-3 gap-4">
-
-                    <div class="bg-gray-50 border border-gray-200 rounded-xl p-4 text-center custom-transition hover:border-black hover:shadow-md">
-                        <p class="text-2xl font-black text-black">3+</p>
-                        <p class="text-[10px] text-gray-500 font-medium uppercase tracking-widest mt-1">Years Exp.</p>
-                    </div>
-
-                    <div class="bg-black text-white rounded-xl p-4 text-center custom-transition hover:bg-gray-800">
-                        <p class="text-2xl font-black">10+</p>
-                        <p class="text-[10px] text-gray-400 font-medium uppercase tracking-widest mt-1">Projects</p>
-                    </div>
-
-                    <div class="bg-gray-50 border border-gray-200 rounded-xl p-4 text-center custom-transition hover:border-black hover:shadow-md">
-                        <p class="text-2xl font-black text-black">5+</p>
-                        <p class="text-[10px] text-gray-500 font-medium uppercase tracking-widest mt-1">Certifications</p>
-                    </div>
-
+                <div class="w-9 h-9 rounded-full border-2 border-white overflow-hidden bg-black shadow-lg">
+                    <img src="assets/about_section.png" alt="Me" class="w-full h-full object-cover">
                 </div>
-
             </div>
+        </div>
+
+    </div>
+
+    <!-- Stats Row -->
+<!-- Stats Row -->
+<!-- Stats Row -->
+<div class="grid grid-cols-3 gap-3"> 
+
+    <div class="bg-white border border-white/20 rounded-full py-4 px-2 text-center custom-transition hover:bg-gray-100">
+        <p class="text-2xl font-black text-black">3+</p>
+        <p class="text-[10px] text-gray-500 font-medium uppercase tracking-widest mt-1">Years Exp.</p>
+    </div>
+
+    <div class="bg-white border border-white/20 rounded-full py-4 px-2 text-center custom-transition hover:bg-gray-100">
+        <p class="text-2xl font-black text-black">10+</p>
+        <p class="text-[10px] text-gray-500 font-medium uppercase tracking-widest mt-1">Projects</p>
+    </div>
+
+    <div class="bg-white border border-white/20 rounded-full py-4 px-2 text-center custom-transition hover:bg-gray-100">
+        <p class="text-2xl font-black text-black">14+</p>
+        <p class="text-[10px] text-gray-500 font-medium uppercase tracking-widest mt-1">Certifications</p>
+    </div>
+
+</div>
+
+</div>
 
         </div>
     </div>
