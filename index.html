@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - Md. Mahamudul Hasan</title> 
+    <title>Portfolio - Data Analyst</title>
     <script src="https://cdn.tailwindcss.com"></script>
     
     <!-- Configure Tailwind with Dynamic CSS Variables for Premium Dark Mode -->
@@ -326,20 +326,6 @@
         .raw-data-overlay::-webkit-scrollbar { width: 6px; }
        .raw-data-overlay::-webkit-scrollbar-thumb { background: var(--color-sage); }
 
-        /* Vertical Stripe Pattern */ 
-        .bg-stripe-pattern {
-            background-color: #111111;
-            background-image: repeating-linear-gradient(
-                90deg,
-                transparent,
-                transparent 60px,
-                rgba(255, 255, 255, 0.04) 60px,
-                rgba(255, 255, 255, 0.04) 61px
-            );
-        }
-
-        /* Logo Marquee Animation */
-
         /* Logo Marquee Animation */
         .logo-marquee {
             animation: logoScroll 30s linear infinite;
@@ -353,6 +339,7 @@
             0% { transform: translateX(0); }
             100% { transform: translateX(-50%); }
         }
+    </style>
     </style>
 </head>
 <body class="bg-white text-black overflow-x-hidden">
@@ -436,124 +423,54 @@
     </nav>
 
     <!-- Hero Section -->
-<!-- Hero Section -->
-<!-- Hero Section -->
-<!-- Hero Section -->
-<section id="home" class="min-h-screen flex items-center pt-24 pb-16 bg-white relative overflow-hidden">
-
-    <!-- Subtle background grid -->
-    <div class="absolute inset-0 bg-grid-pattern opacity-30 pointer-events-none"></div>
-
-    <div class="max-w-7xl mx-auto px-6 w-full relative z-10">
-        <div class="grid md:grid-cols-2 gap-16 items-center">
-
-            <!-- Left: Text Content -->
-            <div class="flex flex-col gap-8">
-
-                <!-- Small label badge -->
-                <div class="inline-flex items-center gap-2 w-fit border border-gray-600 rounded-full px-4 py-2 bg-white/5">
-    <span class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
-    <span class="text-xs font-mono font-bold uppercase tracking-widest text-gray-300">
-        Available for new opportunities
-    </span>
-</div>  
-
-                <!-- Main Headline -->
-                <div>
-                   <h1 class="text-5xl md:text-6xl lg:text-7xl font-black tracking-tight leading-[1.05] text-white">
-                   Turning Raw Data Into
-                    <span class="italic font-black"> Clear</span>
-                   Business Decisions.
-                    </h1> 
+    <section id="home" class="pt-32 pb-24 md:pt-48 md:pb-32 bg-grid-pattern relative">
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div class="flex flex-col gap-6 max-w-lg">
+                    <div>
+                        <h1 class="text-5xl font-bold tracking-tight uppercase break-words text-black">Md. Mahamudul Hasan</h1>
+                        <h2 class="text-lg font-bold text-gray-400 mt-2 uppercase tracking-widest">Research & Data Analysis </h2>
+                    </div>
+                    <p class="text-base text-gray-600 max-w-2xl leading-relaxed mt-2">
+                        Economics graduate combining quantitative training with practical skills in data analysis, research, and turning complex data into actionable insights. Passionate about identifying anomalies and helping businesses reduce lead loss through evidence-based decision-making.
+                    </p>
+                    <div class="flex flex-wrap gap-4 mt-2">
+                        <a href="#projects" class="bg-black text-white px-6 py-3 font-medium shadow-[4px_4px_0px_0px_var(--color-shadow)] custom-transition hover:-translate-y-1 hover:shadow-[4px_6px_0px_0px_var(--color-shadow)]">View live Case Studies</a>
+                        <a href="docs/Mahamudul_CV_Portfolio.pdf" 
+   download="Mahamudul_CV_Portfolio.pdf" 
+   target="_blank"
+   onclick="gtag('event', 'cv_download', { method: 'direct' });"
+   class="border-2 border-black px-6 py-3 font-medium custom-transition hover:bg-gray-50 flex items-center justify-center text-center">
+   Download CV
+</a>
+                    </div>
                 </div>
-
-                <!-- Subtitle -->
-                <p class="text-base md:text-lg text-gray-500 leading-relaxed max-w-lg">
-                    Economics graduate combining quantitative research with hands-on data analysis — helping businesses reduce lead loss and make evidence-based decisions.
-                </p>
-
-                <!-- CTA Buttons -->
-                <div class="flex flex-wrap gap-4">
-                    <a href="#projects"
-                       class="bg-black text-white px-7 py-3.5 rounded-full font-semibold text-sm custom-transition hover:bg-gray-800 hover:scale-105">
-                        View Case Studies
-                    </a>
-                    <a href="docs/Mahamudul_CV_Portfolio.pdf"
-                       download="Mahamudul_CV_Portfolio.pdf"
-                       target="_blank"
-                       onclick="gtag('event', 'cv_download', { method: 'direct' });"
-                       class="border border-gray-300 text-black px-7 py-3.5 rounded-full font-semibold text-sm custom-transition hover:border-black hover:bg-gray-50">
-                        Download CV
-                    </a>
-                </div>
-
-                <!-- Social proof strip -->
-                 <!-- Social proof strip -->
-<div class="flex items-center gap-4 pt-4 border-t border-gray-700">
-    <div class="flex -space-x-2">
-        <div class="w-8 h-8 rounded-full bg-gray-600 border-2 border-gray-900 flex items-center justify-center text-xs font-bold text-white">V</div>
-        <div class="w-8 h-8 rounded-full bg-gray-500 border-2 border-gray-900 flex items-center justify-center text-xs font-bold text-white">I</div>
-        <div class="w-8 h-8 rounded-full bg-gray-400 border-2 border-gray-900 flex items-center justify-center text-xs font-bold text-white">D</div>
-    </div>
-    <div>
-        <p class="text-xs font-bold text-white">5+ Companies Worked With</p>
-        <p class="text-xs text-gray-300">Vibely Digital · IFA Consultancy · Datascape · SystemSuge</p>
-   </div>
-</div> 
-            <!-- Right: Stats & Visual Card -->
-          <!-- Right: Stats & Visual Card -->
-<div class="flex flex-col gap-4">
-
-    <!-- Main Visual Card — taller to match heading height -->
-    <div class="relative bg-white/5 border border-white/10 rounded-2xl p-6 overflow-hidden" style="min-height: 340px;">
-
-        <!-- Card label -->
-        <div class="inline-flex items-center gap-2 bg-white text-black text-[10px] font-bold px-3 py-1.5 rounded-full uppercase tracking-widest mb-4">
-            Live Analytics
-        </div>
-
-        <!-- Chart — taller -->
-        <div class="w-full relative" style="height: 260px;">
-            <canvas id="heroChart"></canvas>
-            <div id="current-month-marker" class="absolute hidden flex-col items-center justify-center pointer-events-none z-10 transform -translate-x-1/2 -translate-y-1/2">
-                <div class="bg-white text-black text-[10px] font-bold px-3 py-1 mb-1 rounded-full whitespace-nowrap shadow-lg">
-                    I am here
-                </div>
-                <div class="w-9 h-9 rounded-full border-2 border-white overflow-hidden bg-black shadow-lg">
-                    <img src="assets/about_section.png" alt="Me" class="w-full h-full object-cover">
-                </div>
+                <div class="flex justify-center md:justify-end">
+                    <div class="border-box w-full max-w-md aspect-[4/3] bg-gray-100 custom-transition p-4 flex flex-col items-start justify-center cursor-crosshair relative group">
+                        <div class="absolute top-4 left-4 border border-black px-2 py-1 text-[10px] font-bold uppercase tracking-widest bg-white z-10 shadow-[2px_2px_0px_var(--color-shadow)]">
+                            Live Interaction 
+                        </div>
+                        <div class="w-full h-full relative z-0 pt-8 flex-grow">
+                            <div class="relative w-full h-full">
+                                <canvas id="heroChart"></canvas>  
+                                <div id="current-month-marker" class="absolute hidden flex-col items-center justify-center pointer-events-none z-10 transform -translate-x-1/2 -translate-y-1/2">
+                                    <div class="bg-black text-white text-[10px] font-bold px-3 py-1 mb-1 shadow-[2px_2px_0px_var(--color-shadow)] whitespace-nowrap relative transform -translate-y-1">
+                                        I am here 
+                                        <div class="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-[4px] border-r-[4px] border-t-[4px] border-l-transparent border-r-transparent border-t-black"></div>
+                                    </div>
+                                    <div class="w-8 h-8 rounded-full border-2 border-black overflow-hidden bg-white shadow-[2px_2px_0px_var(--color-shadow)]">
+                                        <img src="assets/about_section.png" alt="Me" class="w-full h-full object-cover"> 
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
             </div>
         </div>
+        <div class="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-gray-50 to-transparent z-0 pointer-events-none"></div>
+    </section> 
 
-    </div>
-
-    <!-- Stats Row -->
-  <!-- Stats Row -->
-<!-- Stats Row --> 
-<div class="grid grid-cols-3 gap-3">
-
-    <div class="bg-white border border-white/20 rounded-full py-4 px-2 text-center custom-transition hover:bg-gray-100">
-        <p class="text-2xl font-black text-black">3+</p>
-        <p class="text-[10px] text-gray-500 font-medium uppercase tracking-widest mt-1">Years Exp.</p>
-    </div>
-
-    <div class="bg-white border border-white/20 rounded-full py-4 px-2 text-center custom-transition hover:bg-gray-100">
-        <p class="text-2xl font-black text-black">10+</p>
-        <p class="text-[10px] text-gray-500 font-medium uppercase tracking-widest mt-1">Projects</p>
-    </div>
-
-    <div class="bg-white border border-white/20 rounded-full py-4 px-2 text-center custom-transition hover:bg-gray-100">
-        <p class="text-2xl font-black text-black">14+</p>
-        <p class="text-[10px] text-gray-500 font-medium uppercase tracking-widest mt-1">Certifications</p>
-    </div>
-
-</div>
-
-    <!-- Bottom fade -->
-    <div class="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-white to-transparent pointer-events-none"></div>
-
-</section> 
-    
     <!-- Tech Stack Marquee Divider -->
   <!-- Tools & Software Logo Strip -->
 <!-- Tools & Software Logo Strip -->
@@ -561,7 +478,7 @@
 <div class="w-full bg-white py-12 overflow-hidden"> 
     <div class="max-w-7xl mx-auto px-6">
 
-        <!-- Label --> 
+        <!-- Label -->
       
     </div> 
 
